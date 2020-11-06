@@ -385,6 +385,12 @@ public:
 	/// Dump this body to a file
 	void Dump();
 
+  /// Get current sleep time. Exposed for easier cloning.
+	float GetSleepTime() const;
+
+  /// Set sleep time. Exposed for easier cloning.
+  void SetSleepTime(float newSleepTime);
+
 private:
 
 	friend class b2World;
@@ -873,6 +879,15 @@ inline b2World* b2Body::GetWorld()
 inline const b2World* b2Body::GetWorld() const
 {
 	return m_world;
+}
+
+inline float b2Body::GetSleepTime() const
+{
+	return m_angularVelocity;
+}
+
+inline void b2Body::SetSleepTime(float newSleepTime) {
+  m_sleepTime = newSleepTime;
 }
 
 #endif
