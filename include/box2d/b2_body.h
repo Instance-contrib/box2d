@@ -386,7 +386,7 @@ public:
 	void Dump();
 
   /// Get current sleep time. Exposed for easier cloning.
-	float GetSleepTime() const;
+  float GetSleepTime() const;
 
   /// Set sleep time. Exposed for easier cloning.
   void SetSleepTime(float newSleepTime);
@@ -883,7 +883,7 @@ inline const b2World* b2Body::GetWorld() const
 
 inline float b2Body::GetSleepTime() const
 {
-	return m_angularVelocity;
+	return m_sleepTime;;
 }
 
 inline void b2Body::SetSleepTime(float newSleepTime) {
